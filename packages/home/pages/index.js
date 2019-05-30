@@ -7,7 +7,7 @@ const  prefix = process.NODE_ENV == 'development' ? 'http://localhost:5003' : 'h
 const image = `${prefix}/static/home.png`;
 const Index = (props) => (
   <div>
-     <h1>Home Page </h1>
+     <h1>Home Page changed</h1>
     <img src={image} width="100%" />
   </div>
 )
