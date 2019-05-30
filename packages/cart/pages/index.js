@@ -4,7 +4,7 @@ const  prefix = process.NODE_ENV == 'development' ? 'http://localhost:5003' : 'h
 const image = `${prefix}/static/cart.png`;
 export default () => (
     <div>
-       <h1>Cart Page</h1>
+       <h1>Cart Page Modified</h1>
        <img src={image} width="100%"  />
     </div>
 )
