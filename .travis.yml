@@ -15,8 +15,6 @@ matrix:
       env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
     - name: "Cart Pipeline"
       env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
-      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION
-      script: skip
 
 # script:
 #   - cd $PACKAGE_LOCATION
