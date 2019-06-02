@@ -9,14 +9,14 @@ notifications:
     email: false
   
 
-jobs:
+matrix:
   include:
     # - name: "Home Pipeline"
     #   env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
     # - name: "Cart Pipeline"
     #   env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
-    - stage: deploy-home
-      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/home
+    - stage: deploy-cart
+      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/cart
       name:  "Cart Pipeline"
       script: echo "$PACKAGE_LOCATION is being built"
      
