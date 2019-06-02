@@ -15,8 +15,8 @@ jobs:
     #   env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
     # - name: "Cart Pipeline"
     #   env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
-    - stage: deploy-cart
-      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/cart
+    - stage: deploy-home
+      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/home
       name:  "Cart Pipeline"
       script: echo "$PACKAGE_LOCATION is being built"
      
