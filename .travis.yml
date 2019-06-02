@@ -11,15 +11,12 @@ notifications:
 
 matrix:
   include:
-    # - name: "Home Pipeline"
-    #   env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
-    # - name: "Cart Pipeline"
-    #   env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
-    - stage: deploy-cart
-      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/cart
-      name:  "Cart Pipeline"
-      script: echo "$PACKAGE_LOCATION is being built"
-     
+    - name: "Home Pipeline"
+      env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
+    - name: "Cart Pipeline"
+      env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
+      if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION
+      script: skip
 
 # script:
 #   - cd $PACKAGE_LOCATION
@@ -27,7 +24,7 @@ matrix:
 #   - yarn build
 
 
-#script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && exit; fi
+script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && exit; fi
 
 #script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then yarn test && yarn build else echo "$PACKAGE_LOCATION is NOT being built"; fi
 
