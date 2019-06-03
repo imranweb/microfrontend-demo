@@ -25,7 +25,7 @@ aliases:
     - setup_remote_docker
     - run: *run_build
   - &common_environment
-    # docker: *docker_environment
+    docker: *docker_environment
     steps: *common_steps
 jobs:
   cart:
