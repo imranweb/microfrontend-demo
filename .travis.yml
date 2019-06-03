@@ -17,6 +17,7 @@ jobs:
       script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
     - stage: UI tests
       name: part2
+      before_install: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
       script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
 
 # matrix:
