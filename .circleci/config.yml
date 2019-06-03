@@ -32,10 +32,10 @@ aliases:
     docker: *docker_environment
     steps: *common_steps
 jobs:
-  api:
+  cart:
     <<: *common_environment
     working_directory: ~/imranweb/packages/cart
-  frontend:
+  home:
     <<: *common_environment
     working_directory: ~/imranweb/packages/home
 workflows:
