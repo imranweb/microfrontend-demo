@@ -16,7 +16,7 @@ aliases:
   #     - node_modules
   - &run_build
     name: Building an Image
-    command: ~/imranweb/.circleci/run.sh
+    command: - bash ~/imranweb/.circleci/run.sh
   - &common_steps
     - checkout: *checkout
     # - restore_cache: *restore_cache_dependencies
