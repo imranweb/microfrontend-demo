@@ -8,24 +8,13 @@ cache: yarn
 notifications:
     email: false
   
-conditions: v1
 
-jobs:
+matrix:
   include:
-    - stage: UI tests
-      name: part1
-      script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
-    - stage: UI tests
-      name: part2
-      before_install: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
-      script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
-
-# matrix:
-#   include:
-#     - name: "Home Pipeline"
-#       env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
-#     - name: "Cart Pipeline"
-#       env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
+    - name: "Home Pipeline"
+      env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
+    - name: "Cart Pipeline"
+      env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
 
 # script:
 #   - cd $PACKAGE_LOCATION
@@ -33,11 +22,14 @@ jobs:
 #   - yarn build
 
 
-#script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
+script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; 
+then echo "$PACKAGE_LOCATION is being built" && 
+cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; 
+else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 0; fi
 
 
-# deploy:
-#   provider: script
-#   script:  now --token $NOW_TOKEN
-#   skip_cleanup: true
-#   app: $PACKAGE_NAME
+deploy:
+  provider: script
+  script:  now --token $NOW_TOKEN
+  skip_cleanup: true
+  app: $PACKAGE_NAME
