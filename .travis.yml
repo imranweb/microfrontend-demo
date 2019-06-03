@@ -25,7 +25,7 @@ matrix:
 script:
   - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
     then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now;
-    else echo "$PACKAGE_LOCATION is NOT being built" && echo -e "\e[41m$PACKAGE_LOCATION is NOT being built"  && travis_terminate 0;
+    else echo -e "\033[41m$PACKAGE_LOCATION is NOT being built"  && travis_terminate 0;
     fi
 
 deploy:
