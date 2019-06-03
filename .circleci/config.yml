@@ -6,18 +6,14 @@ aliases:
     - image: circleci/rabbitmq:3.6.6
   - &checkout
     path: ~/imranweb
-  - &restore_cache_dependencies
-    name: "Restoring node_modules from the cache"
-    keys:
-      - node-modules-cache-{{ checksum "package-lock.json" }}
   - &run_npm_install
     name: Installing Dependencies
-    command: npm install --no-package-lock --no-audit --verbose
-  - &save_cache_dependencies
-    name: "Saving node_modules into the cache"
-    key: node-modules-cache-{{ checksum "package-lock.json" }}
-    paths:
-      - node_modules
+    command: yarn install
+  # - &save_cache_dependencies
+  #   name: "Saving node_modules into the cache"
+  #   key: node-modules-cache-{{ checksum "package-lock.json" }}
+  #   paths:
+  #     - node_modules
   - &run_build
     name: Building an Image
     command: ~/imranweb/.circleci/run.sh
@@ -25,11 +21,11 @@ aliases:
     - checkout: *checkout
     - restore_cache: *restore_cache_dependencies
     - run: *run_npm_install
-    - save_cache: *save_cache_dependencies
+    # - save_cache: *save_cache_dependencies
     - setup_remote_docker
     - run: *run_build
   - &common_environment
-    docker: *docker_environment
+    # docker: *docker_environment
     steps: *common_steps
 jobs:
   cart:
