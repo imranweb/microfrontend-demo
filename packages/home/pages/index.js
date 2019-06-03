@@ -8,7 +8,7 @@ const topBanner = `${prefix}/static/banner.png`;
 const image = `${prefix}/static/home.png`;
 const Index = (props) => (
   <div>
-     <h1>Home Page</h1>
+     <h1>Home Page55</h1>
      {/* <img src={topBanner} width="100%" /> */}
     <img src={image} width="100%" />
   </div>

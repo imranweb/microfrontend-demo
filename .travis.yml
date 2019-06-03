@@ -1,7 +1,7 @@
-#language: generic
-language: node_js
-node_js:
-  - "10.9.0"
+language: generic
+# language: node_js
+# node_js:
+#   - "10.9.0"
 
 cache: yarn
 
@@ -24,12 +24,9 @@ matrix:
 
 script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now; else echo "$PACKAGE_LOCATION is NOT being built" && travis_terminate 1; fi
 
-#script: if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION; then yarn test && yarn build else echo "$PACKAGE_LOCATION is NOT being built"; fi
 
-
-
-# deploy:
-#   provider: script
-#   script:  now --token $NOW_TOKEN
-#   skip_cleanup: true
-#   app: $PACKAGE_NAME
+deploy:
+  provider: script
+  script:  now --token $NOW_TOKEN
+  skip_cleanup: true
+  app: $PACKAGE_NAME
