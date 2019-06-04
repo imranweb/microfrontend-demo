@@ -3,7 +3,8 @@ const image = `${prefix}/static/cart.png`;
 
 const onClickHandler = () => {
    // console.log("%c%cPlease fix me!!", "background:black ; color: white", "color: red; font-size:25px");
-   // window.location.href =  '/checkout';
+    window.location.href =  '/checkout';
+    
 }
 export default () => (
     <div>
