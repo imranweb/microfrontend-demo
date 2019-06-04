@@ -7,7 +7,6 @@
   "workspaces": [
     "packages/*"
   ],
-  "nohoist": ["**/shared", "**/shared/**"],
   "scripts": {
     "clean": "lerna clean --yes && rm -rf ./node_modules && rm -r **/*/.next",
     "start:apps": "lerna run --parallel --ignore shared dev",

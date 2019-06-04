@@ -109,31 +109,46 @@ var _jsxFileName = "/Users/mohimran/projects/sapient/microfrontend-demo/packages
  //import {Layout, Button} from 'shared';
 //import ButtonFlow from 'shared/ButtonFlow';
 
-var prefix = process.NODE_ENV == 'development' ? 'http://localhost:5003' : 'https://my-nextjs-app.imranweb.now.sh';
-var image = "".concat(prefix, "/static/home.png");
+var prefix =  true ? 'http://localhost:5003' : undefined;
+var topBanner = "".concat(prefix, "/static/banner.png");
+var image = "".concat(prefix, "/static/home-local.png");
 
 var Index = function Index(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 9
-    },
-    __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    __source: {
-      fileName: _jsxFileName,
       lineNumber: 10
     },
     __self: this
-  }, "Home Page "), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
-    src: image,
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     width: "100%",
+    src: image,
+    useMap: "#image-map",
     __source: {
       fileName: _jsxFileName,
-      lineNumber: 11
+      lineNumber: 13
     },
     __self: this
-  }));
+  }), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("map", {
+    name: "image-map",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 14
+    },
+    __self: this
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("area", {
+    target: "",
+    alt: "",
+    title: "",
+    href: "https://cart-app.imranweb.now.sh/",
+    coords: "1394,18,1481,66",
+    shape: "rect",
+    __source: {
+      fileName: _jsxFileName,
+      lineNumber: 15
+    },
+    __self: this
+  })));
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (Index);
