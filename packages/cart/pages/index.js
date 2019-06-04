@@ -3,7 +3,7 @@ const image = `${prefix}/static/cart.png`;
 
 const onClickHandler = () => {
     console.log("%c%cCheckout button not working", "background:black ; color: white", "color: red; font-size:25px");
-    //window.location.href =  'https://home-app.imranweb.now.sh';
+    //window.location.href =  'https://microfrontend-demo.imranweb.now.sh/checkout';
 }
 export default () => (
     <div>

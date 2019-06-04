@@ -8,7 +8,7 @@ export default () => (
        {/* <h1>Checkout Page</h1> */}
        <img width="100%" src={image} useMap="#image-map" />
         <map name="image-map">
-        <area target="" alt="" title="" href="https://home-app.imranweb.now.sh" coords="408,64,137,9" shape="rect" />
+        <area target="" alt="" title="" href="https://microfrontend-demo.imranweb.now.sh/" coords="408,64,137,9" shape="rect" />
         </map>
     </div>
 )
