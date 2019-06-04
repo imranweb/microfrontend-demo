@@ -8,11 +8,6 @@ cache: yarn
 notifications:
     email: false
   
-before_install:
-  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
-    then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION
-    else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
-    fi
 
 matrix:
   include:
@@ -21,17 +16,24 @@ matrix:
     - name: "Cart Pipeline"
       env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
 
-# script:
-#   - cd $PACKAGE_LOCATION
-#   - yarn test
-#   - yarn build
+before_install:
+  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
+    then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION
+    else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
+    fi
 
 
 script:
-  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
-    then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now;
-    else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
-    fi
+  - cd $PACKAGE_LOCATION
+  - yarn test
+  - yarn build
+
+
+# script:
+#   - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
+#     then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test && yarn global add now;
+#     else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
+#     fi
 
 deploy:
   - provider: script
