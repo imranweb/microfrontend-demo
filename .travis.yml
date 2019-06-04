@@ -8,6 +8,11 @@ cache: yarn
 notifications:
     email: false
   
+before_install:
+  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
+    then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION
+    else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
+    fi
 
 matrix:
   include:
