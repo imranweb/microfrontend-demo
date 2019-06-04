@@ -37,4 +37,4 @@ deploy:
     app: $PACKAGE_NAME
 
 after_deploy:
-  script: travis_terminate 0;
+   - if 1==1; then travis_terminate 1; fi
