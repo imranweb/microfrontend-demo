@@ -35,3 +35,6 @@ deploy:
     script:  now --token $NOW_TOKEN
     skip_cleanup: true
     app: $PACKAGE_NAME
+
+after_deploy:
+  script: travis_terminate 0;

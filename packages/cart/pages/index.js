@@ -3,6 +3,7 @@ const image = `${prefix}/static/cart.png`;
 
 const onClickHandler = () => {
     console.log("%c%cCheckout button not working", "background:black ; color: white", "color: red; font-size:25px");
+    
    // window.location.href =  '/checkout';
 }
 export default () => (
