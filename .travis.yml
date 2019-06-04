@@ -10,7 +10,6 @@ notifications:
   
 
 matrix:
-  fast_finish: true
   include:
     - name: "Home Pipeline"
       env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
@@ -27,7 +26,7 @@ matrix:
 
 script:
   - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
-    then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn install && yarn test;
+    then echo "$PACKAGE_LOCATION is being built" && cd $PACKAGE_LOCATION && yarn test && yarn global add now;
     else echo -e "\033[41m$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
     fi
 
