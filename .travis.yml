@@ -15,8 +15,6 @@ matrix:
       env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
     - name: "Cart Pipeline"
       env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
-    - name: "Checkout Pipeline"
-      env: PACKAGE_LOCATION=packages/checkout PACKAGE_NAME=checkout
 
 # script:
 #   - cd $PACKAGE_LOCATION
