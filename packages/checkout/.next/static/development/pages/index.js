@@ -57,13 +57,7 @@ var image = "".concat(prefix, "/static/checkout.png");
       lineNumber: 7
     },
     __self: this
-  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("h1", {
-    __source: {
-      fileName: _jsxFileName,
-      lineNumber: 8
-    },
-    __self: this
-  }, "Checkout Page"), react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
+  }, react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("img", {
     width: "100%",
     src: image,
     useMap: "#image-map",
@@ -83,7 +77,7 @@ var image = "".concat(prefix, "/static/checkout.png");
     target: "",
     alt: "",
     title: "",
-    href: prefix,
+    href: "/",
     coords: "408,64,137,9",
     shape: "rect",
     __source: {

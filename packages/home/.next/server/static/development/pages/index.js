@@ -111,7 +111,7 @@ var _jsxFileName = "/Users/mohimran/projects/sapient/microfrontend-demo/packages
 
 var prefix =  true ? 'http://localhost:5003' : undefined;
 var topBanner = "".concat(prefix, "/static/banner.png");
-var image = "".concat(prefix, "/static/home-local.png");
+var image = "".concat(prefix, "/static/home.png");
 
 var Index = function Index(props) {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
@@ -140,7 +140,7 @@ var Index = function Index(props) {
     target: "",
     alt: "",
     title: "",
-    href: "https://cart-app.imranweb.now.sh/",
+    href: "/cart",
     coords: "1394,18,1481,66",
     shape: "rect",
     __source: {
