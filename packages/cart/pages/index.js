@@ -7,7 +7,7 @@ const onClickHandler = () => {
 }
 export default () => (
     <div>
-       {/* <h1>Cart Page Modified 55</h1> */}
+       {/* <h1>Cart Page Modified </h1> */}
        <img width="100%" src={image} useMap="#image-map" />
        <map name="image-map">
             <area target="" alt="" title="" onClick={onClickHandler} coords="1491,470,1062,417" shape="rect" />
