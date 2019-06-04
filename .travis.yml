@@ -8,6 +8,7 @@ cache: yarn
 notifications:
     email: false
   
+install: true
 
 matrix:
   include:
