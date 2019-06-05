@@ -11,17 +11,20 @@ notifications:
 install: true
 
 matrix:
+  fast_finish: true
   include:
     - name: "Home Pipeline"
       env: PACKAGE_LOCATION=packages/home PACKAGE_NAME=home
+      if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/home;
     - name: "Cart Pipeline"
       env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
+      if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/cart;
 
-before_install:
-  - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
-    then echo "$PACKAGE_LOCATION is being built"
-    else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
-    fi
+# before_install:
+#   - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
+#     then echo "$PACKAGE_LOCATION is being built"
+#     else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
+#     fi
 
 
 script:
