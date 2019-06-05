@@ -28,7 +28,7 @@ before_install:
 
 script:
   - cd $PACKAGE_LOCATION
-  - yarn instll
+  - yarn install
   - yarn add now --dev
   - yarn test
   - yarn build
