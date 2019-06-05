@@ -18,7 +18,7 @@ matrix:
       #if: .travis/build-condition.sh $TRAVIS_COMMIT_RANGE packages/home;
     - name: "Cart Pipeline"
       env: PACKAGE_LOCATION=packages/cart PACKAGE_NAME=cart
-      if: git diff --name-only $TRAVIS_COMMIT_RANGE | sort -u | uniq | grep packages/cart > /dev/null
+      if: git diff --name-only $TRAVIS_COMMIT_RANGE | sort -u | uniq | grep packages/cart
 
 # before_install:
 #   - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
