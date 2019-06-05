@@ -21,13 +21,15 @@ matrix:
 
 before_install:
   - if .travis/build-condition.sh $TRAVIS_COMMIT_RANGE $PACKAGE_LOCATION;
-    then echo "$PACKAGE_LOCATION is being built"
+    then echo "$PACKAGE_LOCATION is being built";
     else echo "$PACKAGE_LOCATION is NOT being built and deployed"  && travis_terminate 0;
     fi
 
 
 script:
   - cd $PACKAGE_LOCATION
+  - yarn instll
+  - yarn add now --dev
   - yarn test
   - yarn build
 
