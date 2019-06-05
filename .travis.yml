@@ -29,7 +29,7 @@ before_install:
 script:
   - cd $PACKAGE_LOCATION
   - yarn install
-  - yarn add now --dev
+  - yarn global add now
   - yarn test
   - yarn build
 
