@@ -107,10 +107,11 @@ __webpack_require__.r(__webpack_exports__);
 var _jsxFileName = "/Users/mohimran/projects/sapient/microfrontend-demo/packages/cart/pages/index.js";
 
 var prefix =  true ? 'http://localhost:5002' : undefined;
-var image = "".concat(prefix, "/static/cart.png");
+var image = "".concat(prefix, "/static/cart-min.png");
 
 var onClickHandler = function onClickHandler() {
-  console.log("%c%cCheckout button not working", "background:black ; color: white", "color: red; font-size:25px"); //window.location.href =  '/checkout';
+  //console.log("%c%cPlease fix me!!", "background:black ; color: white", "color: red; font-size:25px");
+  window.location.href = '/checkout';
 };
 
 /* harmony default export */ __webpack_exports__["default"] = (function () {

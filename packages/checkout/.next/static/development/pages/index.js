@@ -25,12 +25,12 @@
 
 /***/ "../../node_modules/react/index.js":
 /*!***********************************************************************************************!*\
-  !*** delegated ../../node_modules/react/index.js from dll-reference dll_0bf4c483bad72f872f0e ***!
+  !*** delegated ../../node_modules/react/index.js from dll-reference dll_eea4c2bd957b91b8bf6f ***!
   \***********************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-module.exports = (__webpack_require__(/*! dll-reference dll_0bf4c483bad72f872f0e */ "dll-reference dll_0bf4c483bad72f872f0e"))("../../node_modules/react/index.js");
+module.exports = (__webpack_require__(/*! dll-reference dll_eea4c2bd957b91b8bf6f */ "dll-reference dll_eea4c2bd957b91b8bf6f"))("../../node_modules/react/index.js");
 
 /***/ }),
 
@@ -49,7 +49,7 @@ var _jsxFileName = "/Users/mohimran/projects/sapient/microfrontend-demo/packages
 
 //import {Layout} from 'shared';
 var prefix =  true ? 'http://localhost:5001' : undefined;
-var image = "".concat(prefix, "/static/checkout.png");
+var image = "".concat(prefix, "/static/checkout-min.png");
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {
@@ -102,14 +102,14 @@ module.exports = __webpack_require__(/*! next-client-pages-loader?page=%2F&absol
 
 /***/ }),
 
-/***/ "dll-reference dll_0bf4c483bad72f872f0e":
+/***/ "dll-reference dll_eea4c2bd957b91b8bf6f":
 /*!*******************************************!*\
-  !*** external "dll_0bf4c483bad72f872f0e" ***!
+  !*** external "dll_eea4c2bd957b91b8bf6f" ***!
   \*******************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = dll_0bf4c483bad72f872f0e;
+module.exports = dll_eea4c2bd957b91b8bf6f;
 
 /***/ })
 

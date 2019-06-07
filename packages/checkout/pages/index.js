@@ -1,7 +1,7 @@
 //import {Layout} from 'shared';
 
 const  prefix = process.env.NODE_ENV == 'development' ? 'http://localhost:5001' : 'https://checkout-app.imranweb.now.sh';
-const image = `${prefix}/static/checkout.png`;
+const image = `${prefix}/static/checkout-min.png`;
 
 export default () => (
     <div>

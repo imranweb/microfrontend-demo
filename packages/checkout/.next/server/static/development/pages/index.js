@@ -108,7 +108,7 @@ var _jsxFileName = "/Users/mohimran/projects/sapient/microfrontend-demo/packages
 
 //import {Layout} from 'shared';
 var prefix =  true ? 'http://localhost:5001' : undefined;
-var image = "".concat(prefix, "/static/checkout.png");
+var image = "".concat(prefix, "/static/checkout-min.png");
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   return react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("div", {
     __source: {

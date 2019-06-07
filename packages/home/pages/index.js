@@ -5,7 +5,7 @@ import React from 'react';
 //import ButtonFlow from 'shared/ButtonFlow';
 const  prefix = process.env.NODE_ENV == 'development' ? 'http://localhost:5003' : 'https://home-app.imranweb.now.sh';
 const topBanner = `${prefix}/static/banner.png`;
-const image = `${prefix}/static/home.png`;
+const image = `${prefix}/static/home-min.png`;
 const Index = (props) => (
   <div>
      {/* <h1>Home Page</h1> */}

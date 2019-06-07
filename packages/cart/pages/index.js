@@ -1,5 +1,5 @@
 const  prefix = process.env.NODE_ENV == 'development' ? 'http://localhost:5002' : 'https://cart-app.imranweb.now.sh';
-const image = `${prefix}/static/cart.png`;
+const image = `${prefix}/static/cart-min.png`;
 
 const onClickHandler = () => {
     //console.log("%c%cPlease fix me!!", "background:black ; color: white", "color: red; font-size:25px");
