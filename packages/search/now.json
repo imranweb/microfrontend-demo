@@ -1,0 +1,6 @@
+{
+    "version": 2,
+    "public": true,
+    "name": "search-app",
+    "builds": [{ "src": "next.config.js", "use": "@now/next" }]
+  }

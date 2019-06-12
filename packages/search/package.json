@@ -1,0 +1,23 @@
+{
+  "name": "search",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "NODE_ENV=development next -p 5005",
+    "build": "next build",
+    "start": "NODE_ENV=production node server.js",
+    "test": "jest test --config ../../jest-config.json"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^8.0.3",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4"
+  },
+  "devDependencies": {
+    "jest": "^24.8.0",
+    "next-transpile-modules": "^2.3.1"
+  }
+}
