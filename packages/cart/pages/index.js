@@ -2,8 +2,8 @@ const  prefix = process.env.NODE_ENV == 'development' ? 'http://localhost:5002' 
 const image = `${prefix}/static/cart-min.png`;
 
 const onClickHandler = () => {
-    console.log("%c%cPlease fix me!!", "background:black ; color: white", "color: red; font-size:25px");
-  //window.location.href =  '/checkout';
+  //  console.log("%c%cPlease fix me!!", "background:black ; color: white", "color: red; font-size:25px");
+  window.location.href =  '/checkout';
 }
 export default () => (
     <div>
